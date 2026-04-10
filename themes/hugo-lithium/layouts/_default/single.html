@@ -18,6 +18,16 @@
       {{ .TableOfContents }}
       {{ end }}
       {{ .Content }}
+   {{ with .Params.tags }}
+   <div class="tags">
+    <strong>Tags:</strong>
+    {{ range . }}
+    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+    {{ end }}
+
+</div>
+{{ end }}
+
     </div>
   </article>
 
