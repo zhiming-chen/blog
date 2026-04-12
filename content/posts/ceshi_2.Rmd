@@ -1,0 +1,23 @@
+---
+title: Just for Test22134
+author: Zhiming Chen
+date: '2026-04-10'
+categories:
+  - r
+  - others
+tags: [Quality, test]
+cover:
+    image: "images/color-aesthetics.jpg" # 放在 static/images/
+    alt: "美学配图"
+    relative: false
+draft: false
+---
+
+# Just for Test256789
+
+```{r}
+x <- 1:10
+y <- 1:10
+plot(x,y)
+```
+

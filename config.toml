@@ -1,8 +1,0 @@
-baseURL = "https://zhiming-chen.github.io/"
-languageCode = "zh-cn"
-title = "陈志明的博客"
-theme = "hugo-lithium"
-
-[taxonomies]
-  tag = "tags"
-  category = "categories"
