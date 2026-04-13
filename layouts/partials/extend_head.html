@@ -1,0 +1,47 @@
+<style>
+/* 1. 彻底解决日期抢戏：变小、极细、淡灰 */
+.post-meta {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    color: #b0b0b0 !important; /* 这种灰色几乎不抢眼 */
+    margin-top: 6px !important;
+    margin-bottom: 22px !important; /* 拉开与下方摘要的距离 */
+    display: block;
+    letter-spacing: 0.3px;
+}
+
+/* 2. 标题基础态：沉稳、有质感 */
+.entry-header h2 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: #2c2c2e !important;
+    transition: all 0.2s ease-in-out; /* 丝滑过渡的关键 */
+}
+
+/* 3. 【核心交互】鼠标划过标题时的特效 */
+.post-entry:hover .entry-header h2 {
+    color: #007aff !important;           /* 1. 颜色变蓝 */
+    text-decoration: underline !important; /* 2. 出现下划线 */
+    text-decoration-color: rgba(0, 122, 255, 0.3) !important; /* 3. 下划线要是浅浅的蓝色 */
+    text-underline-offset: 8px;          /* 4. 下划线离文字远一点 */
+    transform: translateX(3px);          /* 5. 标题微微向右移动，增加灵动感 */
+}
+
+/* 4. 整体条目呼吸感优化 */
+.post-entry {
+    margin-bottom: 45px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #f2f2f2; /* 增加一道极浅的分割线 */
+}
+</style>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    }
+  };
+</script>

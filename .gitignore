@@ -1,0 +1,19 @@
+# R / RStudio
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Rprofile
+*.Rproj
+
+# blogdown / Hugo
+/public/
+/resources/
+/.hugo_build.lock
+/static/rmarkdown-libs/
+
+# 其他
+.DS_Store
+Thumbs.db
+*.log
+.remark

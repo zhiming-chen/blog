@@ -1,0 +1,105 @@
+baseURL = "https://zhiming-chen.github.io/"
+languageCode = "zh-cn"
+title = "陈志明的博客"
+theme = "PaperMod"
+
+[outputs]
+    home = ["HTML", "RSS", "JSON"] # 必须有 JSON，搜索功能才能获取索引
+buildFuture = true
+# ----------------------------------------------------------------              
+# 分类配置 (Taxonomies)
+# ----------------------------------------------------------------
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+
+# ----------------------------------------------------------------
+# 个人名片模式 (Profile Mode)
+# 这就是你想要的“精美简介”首页
+# ----------------------------------------------------------------
+[params]
+    # 强制让 PaperMod 的首页模板识别到这个 Section
+    mainSections = ["posts"]
+    # 增加这个开关，有些版本的 PaperMod 需要它来激活首页列表
+    showAllPostsOnHomePage = true
+
+[params.profileMode]
+    enabled = true
+    title = "陈志明"
+    subtitle = """质量  | R 语言| 其他<br/>
+<a href="/search/" class="profile-link">🔍 Search</a>  |  <a href="/tags/" class="profile-link">🏷️ Topics</a>"""
+    displayFullDisp = true  # 确保这个是 false，否则列表会被简介完全覆盖
+    imageUrl = "images/avatar.jpg"
+    imageWidth = 180   
+    imageHeight = 180
+
+# ----------------------------------------------------------------
+# 社交链接 (Social Icons)
+# 会自动在名片下方生成小图标
+# ----------------------------------------------------------------
+[[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/zhiming-chen"
+
+[[params.socialIcons]]
+    name = "email"
+    url = "mailto:zhimingc383@gmail.com"
+# ----------------------------------------------------------------
+# 导航菜单：实现分类汇集与物理定位
+# ----------------------------------------------------------------
+[menu]
+  # 领域导航 (通过 Categories 聚合)
+  [[menu.main]]
+    name = "R"
+    url = "/categories/r/"
+    weight = 10
+
+  [[menu.main]]
+    name = "Quality"
+    identifier = "menu-quality"
+    url = "/categories/quality/"
+    weight = 20
+
+  # 项目导航 (通过 Folder 物理定位)
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 30
+
+  # 编程与工具 (通过 categories  聚合)
+   [[menu.main]]
+          name = "Tools"
+         url = "/categories/tools/"
+        weight = 40
+
+  # 其他文章 (通过 categories  聚合)
+   [[menu.main]]
+          name = "Others"
+         url = "/categories/others/"
+        weight = 50
+
+  # 知识点索引 (通过 Tags 穿透)
+  #  [[menu.main]]
+  #    name = "Topics"
+ #     url = "/tags/"
+  #    weight = 40
+
+   # [[menu.main]]
+  #    name = "Search"
+  #    url = "/search/"
+  #    weight = 50
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      unsafe = true # 允许 HTML 标签渲染
+  [markup.highlight]
+    noClasses = false
