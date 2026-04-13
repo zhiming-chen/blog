@@ -9,7 +9,7 @@ hidemeta: true      # 隐藏日期等元数据，使其更像一个正式页面
 showtoc: true       # 显示右侧目录
 tocopen: true       # 默认展开目录
 
-# 封面图 (建议放一张你最惊艳的“九宫格”合成图)
+# 封面图 (建议放一张最惊艳的“九宫格”合成图)
 cover:
     image: "project/iQualityR/images/hero-grid.png"
     alt: "iQualityR Visual Grid"
