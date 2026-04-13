@@ -1,0 +1,43 @@
+---
+title: "Untitled"
+author: "陈志明"
+date: '2026-04-10'
+categories:
+  - quality
+  - others
+tags: [Quality]
+draft: false
+
+# --- 以下是 PaperMod 推荐增加的参数 ---
+showToc: true          # 是否显示文章目录（对长文很有用）
+TocOpen: false         # 目录默认是否展开
+hidemeta: false        # 是否隐藏作者、日期、分类等元数据
+comments: true         # 是否开启评论（如果你配了评论系统）
+description: "这是一篇关于 R 语言在质量管理中应用的测试文章"
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
