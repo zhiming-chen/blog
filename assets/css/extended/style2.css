@@ -6,14 +6,14 @@ body {
 
 /* ===== 分级标题自动编号 ===== */
 h1 {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   color: #7C1313;
   /* counter-reset: h2-counter h3-counter h4-counter; /* 重置所有计数器 */
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   color: #144676;
  /*  counter-reset: h3-counter h4-counter; /* 重置下级计数器 */
@@ -25,7 +25,7 @@ h2 {
 } */
 
 h3 {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   color: #144676;
  /* counter-reset: h4-counter; /* 重置下级计数器 */
@@ -171,7 +171,7 @@ code:not(pre code) {
 
 /* ===== 工具类 ===== */
 .scroll-100 {
-  max-height: 200px;
+  max-height: 300px;
   overflow-y: auto;
   background-color: inherit;
 }
