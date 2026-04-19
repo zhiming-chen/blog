@@ -9,16 +9,50 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          submodules: true   # 如果你的主题是 git submodule，保留这行；否则可删除
+
       - uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.3.0'
-      - name: Install blogdown
-        run: Rscript -e 'install.packages("blogdown")'
-      - name: Install Hugo
-        run: Rscript -e 'blogdown::install_hugo(version = "0.160.1", extended = TRUE)'
-      - name: Build site
-        run: Rscript -e 'blogdown::build_site()'
+
+      # 缓存 R 包（blogdown 及其依赖）
+      - name: Cache R packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION', '**/*.Rmd') }}
+          restore-keys: |
+            ${{ runner.os }}-r-
+
+      # 缓存 Hugo 二进制（blogdown 下载后会放在 ~/bin）
+      - name: Cache Hugo
+        uses: actions/cache@v4
+        with:
+          path: ~/bin
+          key: ${{ runner.os }}-hugo-0.160.1
+
+      # 关键步骤：在同一个 R 会话中完成 检查/安装 blogdown → 检查/安装 Hugo → 构建站点
+      - name: Build site with blogdown
+        run: |
+          Rscript -e '
+            # 确保 blogdown 已安装（若缓存未命中则安装）
+            if (!requireNamespace("blogdown", quietly = TRUE)) {
+              install.packages("blogdown")
+            }
+            library(blogdown)
+            
+            # 如果 Hugo 尚未缓存，才下载（避免重复下载）
+            if (!file.exists("~/bin/hugo")) {
+              blogdown::install_hugo(version = "0.160.1", extended = TRUE)
+            }
+            
+            # 构建整个站点（会渲染 .Rmd 和 .md）
+            blogdown::build_site()
+          '
+
+      # 部署到你的外部仓库 zhiming-chen/zhiming-chen.github.io
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
