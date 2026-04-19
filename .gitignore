@@ -5,7 +5,8 @@
 .Ruserdata
 .Rprofile
 *.Rproj
-
+/public/
+/blogdown/
 # blogdown / Hugo
 /resources/
 /.hugo_build.lock
@@ -16,4 +17,4 @@
 Thumbs.db
 *.log
 .remark
-/0.160.1/
+/0.160.1//public/
