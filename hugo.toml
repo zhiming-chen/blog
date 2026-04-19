@@ -1,4 +1,4 @@
-baseURL = "https://zhiming-chen.github.io/"
+baseURL ="https://chenzhiming.netlify.app/"
 languageCode = "zh-cn"
 title = "陈志明的博客"
 theme = "PaperMod"
